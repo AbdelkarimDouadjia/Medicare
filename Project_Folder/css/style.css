@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+
+/* Start Variables */
+:root {
+  --main-color: #e53637;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Header */
+
+header {
+  height: 100px;
+  width: 100%;
+  background-image: url(./assets/images/mask.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* line-height: 100px; */
+}
+
+.sticky__header {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: white;
+  box-shadow: 3px 3px -8px 3px #ddd;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #00000084;
+    display: none;
+  }
+
+  .menu {
+    width: 15rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 200;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+  }
+
+  .show__menu {
+    display: block;
+  }
+}
+
+/* End */
+
+/* Start My account */
+.tab-content {
+  display: none;
+}
+
+.active-tab {
+  display: block;
+}
+
+
+.active-button {
+  background-color: #0067FF;
+  color: #fff !important;
+  border: 1px solid #0067FF !important;
+}
+
+#profileSettingsBtn,
+#myBookingBtn,
+#chatBtn,
+#createBookingBtn {
+  font-weight: 600 !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  border-radius: 0.375rem !important;
+  --tw-text-opacity: 1 !important;
+  /* color: rgb(24 26 30 / var(--tw-text-opacity)) !important; */
+  font-size: 16px !important;
+  line-height: 1.75rem !important;
+}
+
+/* End My account */
+
+
+/* Start the chat */
+/* Start Messages Area */
+.search {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search .text {
+  font-size: 18px;
+}
+
+.search input {
+  position: absolute;
+  height: 42px;
+  width: calc(100% - 50px);
+  border: 1px solid #ccc;
+  padding: 0 13px;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.search input.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search button {
+  width: 47px;
+  height: 42px;
+  border: none;
+  outline: none;
+  color: #333;
+  background-color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.search button.active {
+  color: #fff;
+  background-color: #333;
+  transition: all 0.2s ease;
+}
+
+.search button.active i::before {
+  content: "\f00d";
+}
+
+.user-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+/* .user-list::-webkit-scrollbar {
+  width: 0px;
+} */
+
+.user-list a {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  page-break-after: 10px;
+  padding-right: 15px;
+  border-bottom-color: #f1f1f1;
+}
+
+.user-list a:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+
+:is(.user-list) .content {
+  display: flex;
+  align-items: center;
+}
+
+:is(.user-list) .details {
+  color: #000;
+  margin-left: 15px;
+}
+
+:is(.user-list) .details span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.user-list a .content img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.user-list a .content p {
+  color: #67676a;
+
+}
+
+.user-list a .status-dot {
+  font-size: 12px;
+  color: #468869;
+}
+
+/* We'll use this class name in php to show offline status */
+.user-list a .status-dot.offline {
+  color: #ccc;
+}
+
+/* END Messages Area */
+
+/* Start Chat Area */
+.chat-area header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px !important;
+  justify-content: space-between;
+}
+
+.chat-area header > div {
+  display: flex;
+  align-items: center;
+} 
+
+.details .name {
+  font-size: 18px;
+  font-weight: 500;
+
+}
+
+.chat-area header .back-icon {
+  font-size: 18px;
+  color: #333;
+}
+
+.chat-area header img {
+  height: 45px;
+  width: 45px;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+
+.chat-area header .details {
+  text-align: left;
+}
+
+.chat-area header span,
+.sp {
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: capitalize;
+  text-align: left !important;
+}
+
+.chat-area header .details p,
+.nm {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+.chat-box {
+  height: 500px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  padding: 10px 30px 20px 30px;
+  box-sizing: inset 0 32px 32px -32px rgb(0 0 0 / 5%), inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 0px;
+}
+
+.chat-box .chat {
+  margin: 15px 0;
+}
+
+.chat-box .chat p {
+  word-wrap: break-word;
+
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+    0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-box .outgoing {
+  display: flex;
+
+}
+
+.outgoing .details {
+  margin-left: auto;
+  max-width: calc(100% - 130px);
+}
+
+.outgoing .details p {
+  background-color: #333;
+  color: #fff;
+  border-radius: 18px 18px 0 18px;
+}
+
+.chat-box .incoming {
+  display: flex;
+  align-items: flex-end;
+}
+
+.chat-box .incoming img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.incoming .details {
+  margin-left: 10px;
+  margin-right: auto;
+  max-width: calc(100% - 130px);
+}
+
+.incoming .details p {
+  color: #333;
+  background-color: #fff;
+  border-radius: 18px 18px 18px 0;
+}
+
+.chat-area .typing-area {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typing-area input {
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 17px;
+  border: 1px solid #ccc;
+  padding: 0 13px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.typing-area button {
+  width: 55px;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+
+
+
+/* End  Chat Area */
+
+
+/* End the chat  */
